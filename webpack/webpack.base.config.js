@@ -14,12 +14,18 @@ const base = {
   entry: [path.join(process.cwd(), 'src/main')],
   mode: isDebug ? 'development' : 'production',
   output: {
-    publicPath: './',
+    publicPath: '/',
     path: releasePath,
     chunkFilename: '[name].[chunkhash].chunk.js'
   },
   devServer: {
-    contentBase: [path.join(process.cwd(), './vendor-dev/'), path.join(process.cwd(), './vendor/')],
+    // serve index.html + static assets
+    contentBase: [
+      process.cwd(), // <-- project root (where your index.html is)
+      path.join(process.cwd(), './vendor-dev/'),
+      path.join(process.cwd(), './vendor/'),
+      releasePath // <-- dist
+    ],
     hot: true,
     compress: false,
     historyApiFallback: true,
@@ -28,11 +34,7 @@ const base = {
     port: port,
     disableHostCheck: true,
     stats: { colors: true },
-    filename: '[name].chunk.js',
     headers: { 'Access-Control-Allow-Origin': '*' }
-  },
-  resolve: {
-    extensions: [".js", ".json"],
   },
   module: {
     rules: [{
@@ -74,7 +76,7 @@ const base = {
 };
 
 if (isDebug) {
-  base.entry.unshift('react-hot-loader/patch',  `webpack-dev-server/client?http://${host}:${port}`, 'webpack/hot/dev-server');
+  base.entry.unshift('react-hot-loader/patch', `webpack-dev-server/client?http://${host}:${port}`, 'webpack/hot/dev-server');
   base.plugins.unshift(new webpack.HotModuleReplacementPlugin());
   base.devtool = 'source-map';
 } else {

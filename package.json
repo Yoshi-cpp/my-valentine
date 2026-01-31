@@ -2,25 +2,15 @@
   "name": "valentine",
   "version": "1.0.0",
   "description": "情人节",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.js"
+    "start": "webpack-dev-server --mode development --host localhost --port 8080 --config ./webpack/webpack.config.js",
+    "build": "webpack --mode production --config ./webpack/webpack.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yacan8/valentine.git"
-  },
-  "author": "can.yang",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yacan8/valentine/issues"
-  },
-  "homepage": "https://github.com/yacan8/valentine#readme",
   "dependencies": {
     "prismjs": "^1.17.1",
-    "react": "16.0",
-    "react-dom": "16.0"
+    "react": "16.0.0",
+    "react-dom": "16.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -35,7 +25,6 @@
     "babel-loader": "^8.0.6",
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",
-    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.5",
     "file-loader": "^2.0.0",

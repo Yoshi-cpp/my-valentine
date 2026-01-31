@@ -18,7 +18,8 @@ render(App);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
-    module.hot.accept('./app', () => {
-        render(App);
-    })
+  module.hot.accept('./app', () => {
+    const NextApp = require('./app').default;
+    render(NextApp);
+  });
 }
