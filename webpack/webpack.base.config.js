@@ -14,10 +14,11 @@ const base = {
   entry: [path.join(process.cwd(), 'src/main')],
   mode: isDebug ? 'development' : 'production',
   output: {
-    publicPath: '/',
-    path: releasePath,
-    chunkFilename: '[name].[chunkhash].chunk.js'
-  },
+  path: path.resolve(__dirname, '../dist'),
+  filename: 'main.js',
+  publicPath: './'
+}
+,
   devServer: {
     // serve index.html + static assets
     contentBase: [
