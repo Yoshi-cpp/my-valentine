@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "61943db04086837690c5";
+/******/ 	var hotCurrentHash = "8faff3a35446d14dedd9";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -946,7 +946,7 @@ module.exports = _possibleConstructorReturn, module.exports.__esModule = true, m
 "use strict";
 
 
-/** @type {import('./type.ts')} */
+/** @type {import('./type')} */
 module.exports = TypeError;
 
 
@@ -2329,7 +2329,7 @@ module.exports = function GetIntrinsic(name, allowMissing) {
 "use strict";
 
 
-/** @type {import('./functionCall.ts')} */
+/** @type {import('./functionCall')} */
 module.exports = Function.prototype.call;
 
 
@@ -4770,7 +4770,7 @@ var getSideChannelWeakMap = __webpack_require__(101);
 
 var makeChannel = getSideChannelWeakMap || getSideChannelMap || getSideChannelList;
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = function getSideChannel() {
 	/** @typedef {ReturnType<typeof getSideChannel>} Channel */
 
@@ -4830,8 +4830,8 @@ var $mapDelete = callBound('Map.prototype.delete', true);
 /** @type {<K, V>(thisArg: Map<K, V>) => number} */
 var $mapSize = callBound('Map.prototype.size', true);
 
-/** @type {import('./index.ts')} */
-module.exports = !!$Map && /** @type {Exclude<import('./index.ts'), false>} */ function getSideChannelMap() {
+/** @type {import('.')} */
+module.exports = !!$Map && /** @type {Exclude<import('.'), false>} */ function getSideChannelMap() {
 	/** @typedef {ReturnType<typeof getSideChannelMap>} Channel */
 	/** @typedef {Parameters<Channel['get']>[0]} K */
 	/** @typedef {Parameters<Channel['set']>[1]} V */
@@ -4887,7 +4887,7 @@ module.exports = !!$Map && /** @type {Exclude<import('./index.ts'), false>} */ f
 "use strict";
 
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = Object;
 
 
@@ -4898,7 +4898,7 @@ module.exports = Object;
 "use strict";
 
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 var $gOPD = __webpack_require__(91);
 
 if ($gOPD) {
@@ -4966,7 +4966,7 @@ module.exports = function callBindBasic(args) {
 "use strict";
 
 
-/** @type {import('./functionApply.ts')} */
+/** @type {import('./functionApply')} */
 module.exports = Function.prototype.apply;
 
 
@@ -4984,7 +4984,7 @@ var callBindBasic = __webpack_require__(37);
 /** @type {(thisArg: string, searchString: string, position?: number) => number} */
 var $indexOf = callBindBasic([GetIntrinsic('%String.prototype.indexOf%')]);
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = function callBoundIntrinsic(name, allowMissing) {
 	/* eslint no-extra-parens: 0 */
 
@@ -6227,9 +6227,9 @@ module.exports = socket;
 (function (global){(function (){
 'use strict';
 
-var transportList = require('./transport-list.ts');
+var transportList = require('./transport-list');
 
-module.exports = require('./main.js')(transportList);
+module.exports = require('./main')(transportList);
 
 // TODO can't get rid of this until all servers do
 if ('_sockjs_onload' in global) {
@@ -6242,7 +6242,7 @@ if ('_sockjs_onload' in global) {
 'use strict';
 
 var inherits = require('inherits')
-  , Event = require('./event.ts')
+  , Event = require('./event')
   ;
 
 function CloseEvent() {
@@ -6261,7 +6261,7 @@ module.exports = CloseEvent;
 'use strict';
 
 var inherits = require('inherits')
-  , EventTarget = require('./eventtarget.ts')
+  , EventTarget = require('./eventtarget')
   ;
 
 function EventEmitter() {
@@ -6408,7 +6408,7 @@ module.exports = EventTarget;
 'use strict';
 
 var inherits = require('inherits')
-  , Event = require('./event.ts')
+  , Event = require('./event')
   ;
 
 function TransportMessageEvent(data) {
@@ -6424,7 +6424,7 @@ module.exports = TransportMessageEvent;
 },{"./event":4,"inherits":57}],7:[function(require,module,exports){
 'use strict';
 
-var iframeUtils = require('./utils/iframe.ts')
+var iframeUtils = require('./utils/iframe')
   ;
 
 function FacadeJS(transport) {
@@ -6453,12 +6453,12 @@ module.exports = FacadeJS;
 (function (process){(function (){
 'use strict';
 
-var urlUtils = require('./utils/url.ts')
-  , eventUtils = require('./utils/event.ts')
-  , FacadeJS = require('./facade.ts')
-  , InfoIframeReceiver = require('./info-iframe-receiver.ts')
-  , iframeUtils = require('./utils/iframe.ts')
-  , loc = require('./location.ts')
+var urlUtils = require('./utils/url')
+  , eventUtils = require('./utils/event')
+  , FacadeJS = require('./facade')
+  , InfoIframeReceiver = require('./info-iframe-receiver')
+  , iframeUtils = require('./utils/iframe')
+  , loc = require('./location')
   ;
 
 var debug = function() {};
@@ -6561,7 +6561,7 @@ module.exports = function(SockJS, availableTransports) {
 
 var EventEmitter = require('events').EventEmitter
   , inherits = require('inherits')
-  , objectUtils = require('./utils/object.ts')
+  , objectUtils = require('./utils/object')
   ;
 
 var debug = function() {};
@@ -6613,8 +6613,8 @@ module.exports = InfoAjax;
 
 var inherits = require('inherits')
   , EventEmitter = require('events').EventEmitter
-  , XHRLocalObject = require('./transport/sender/xhr-local.ts')
-  , InfoAjax = require('./info-ajax.ts')
+  , XHRLocalObject = require('./transport/sender/xhr-local')
+  , InfoAjax = require('./info-ajax')
   ;
 
 function InfoReceiverIframe(transUrl) {
@@ -6648,9 +6648,9 @@ module.exports = InfoReceiverIframe;
 
 var EventEmitter = require('events').EventEmitter
   , inherits = require('inherits')
-  , utils = require('./utils/event.ts')
-  , IframeTransport = require('./transport/iframe.ts')
-  , InfoReceiverIframe = require('./info-iframe-receiver.ts')
+  , utils = require('./utils/event')
+  , IframeTransport = require('./transport/iframe')
+  , InfoReceiverIframe = require('./info-iframe-receiver')
   ;
 
 var debug = function() {};
@@ -6721,13 +6721,13 @@ module.exports = InfoIframe;
 
 var EventEmitter = require('events').EventEmitter
   , inherits = require('inherits')
-  , urlUtils = require('./utils/url.ts')
-  , XDR = require('./transport/sender/xdr.ts')
-  , XHRCors = require('./transport/sender/xhr-cors.ts')
-  , XHRLocal = require('./transport/sender/xhr-local.ts')
-  , XHRFake = require('./transport/sender/xhr-fake.ts')
-  , InfoIframe = require('./info-iframe.ts')
-  , InfoAjax = require('./info-ajax.ts')
+  , urlUtils = require('./utils/url')
+  , XDR = require('./transport/sender/xdr')
+  , XHRCors = require('./transport/sender/xhr-cors')
+  , XHRLocal = require('./transport/sender/xhr-local')
+  , XHRFake = require('./transport/sender/xhr-fake')
+  , InfoIframe = require('./info-iframe')
+  , InfoAjax = require('./info-ajax')
   ;
 
 var debug = function() {};
@@ -6828,24 +6828,24 @@ module.exports = global.location || {
 (function (process,global){(function (){
 'use strict';
 
-require('./shims.ts');
+require('./shims');
 
 var URL = require('url-parse')
   , inherits = require('inherits')
-  , random = require('./utils/random.ts')
-  , escape = require('./utils/escape.ts')
-  , urlUtils = require('./utils/url.ts')
-  , eventUtils = require('./utils/event.ts')
-  , transport = require('./utils/transport.ts')
-  , objectUtils = require('./utils/object.ts')
-  , browser = require('./utils/browser.ts')
-  , log = require('./utils/log.ts')
-  , Event = require('./event/event.ts')
-  , EventTarget = require('./event/eventtarget.ts')
-  , loc = require('./location.ts')
-  , CloseEvent = require('./event/close.ts')
-  , TransportMessageEvent = require('./event/trans-message.ts')
-  , InfoReceiver = require('./info-receiver.ts')
+  , random = require('./utils/random')
+  , escape = require('./utils/escape')
+  , urlUtils = require('./utils/url')
+  , eventUtils = require('./utils/event')
+  , transport = require('./utils/transport')
+  , objectUtils = require('./utils/object')
+  , browser = require('./utils/browser')
+  , log = require('./utils/log')
+  , Event = require('./event/event')
+  , EventTarget = require('./event/eventtarget')
+  , loc = require('./location')
+  , CloseEvent = require('./event/close')
+  , TransportMessageEvent = require('./event/trans-message')
+  , InfoReceiver = require('./info-receiver')
   ;
 
 var debug = function() {};
@@ -6994,7 +6994,7 @@ SockJS.prototype.send = function(data) {
   this._transport.send(escape.quote(data));
 };
 
-SockJS.version = require('./version.ts');
+SockJS.version = require('./version');
 
 SockJS.CONNECTING = 0;
 SockJS.OPEN = 1;
@@ -7211,7 +7211,7 @@ SockJS.prototype.countRTO = function(rtt) {
 
 module.exports = function(availableTransports) {
   transports = transport(availableTransports);
-  require('./iframe-bootstrap.ts')(SockJS, availableTransports);
+  require('./iframe-bootstrap')(SockJS, availableTransports);
   return SockJS;
 };
 
@@ -7676,19 +7676,19 @@ defineProperties(StringPrototype, {
 
 module.exports = [
   // streaming transports
-  require('./transport/websocket.ts')
-, require('./transport/xhr-streaming.ts')
-, require('./transport/xdr-streaming.ts')
-, require('./transport/eventsource.ts')
-, require('./transport/lib/iframe-wrap.ts')(require('./transport/eventsource.ts'))
+  require('./transport/websocket')
+, require('./transport/xhr-streaming')
+, require('./transport/xdr-streaming')
+, require('./transport/eventsource')
+, require('./transport/lib/iframe-wrap')(require('./transport/eventsource'))
 
   // polling transports
-, require('./transport/htmlfile.ts')
-, require('./transport/lib/iframe-wrap.ts')(require('./transport/htmlfile.ts'))
-, require('./transport/xhr-polling.ts')
-, require('./transport/xdr-polling.ts')
-, require('./transport/lib/iframe-wrap.ts')(require('./transport/xhr-polling.ts'))
-, require('./transport/jsonp-polling.ts')
+, require('./transport/htmlfile')
+, require('./transport/lib/iframe-wrap')(require('./transport/htmlfile'))
+, require('./transport/xhr-polling')
+, require('./transport/xdr-polling')
+, require('./transport/lib/iframe-wrap')(require('./transport/xhr-polling'))
+, require('./transport/jsonp-polling')
 ];
 
 },{"./transport/eventsource":20,"./transport/htmlfile":21,"./transport/jsonp-polling":23,"./transport/lib/iframe-wrap":26,"./transport/websocket":38,"./transport/xdr-polling":39,"./transport/xdr-streaming":40,"./transport/xhr-polling":41,"./transport/xhr-streaming":42}],17:[function(require,module,exports){
@@ -7914,9 +7914,9 @@ if (Driver) {
 'use strict';
 
 var inherits = require('inherits')
-  , AjaxBasedTransport = require('./lib/ajax-based.ts')
-  , EventSourceReceiver = require('./receiver/eventsource.ts')
-  , XHRCorsObject = require('./sender/xhr-cors.ts')
+  , AjaxBasedTransport = require('./lib/ajax-based')
+  , EventSourceReceiver = require('./receiver/eventsource')
+  , XHRCorsObject = require('./sender/xhr-cors')
   , EventSourceDriver = require('eventsource')
   ;
 
@@ -7943,9 +7943,9 @@ module.exports = EventSourceTransport;
 'use strict';
 
 var inherits = require('inherits')
-  , HtmlfileReceiver = require('./receiver/htmlfile.ts')
-  , XHRLocalObject = require('./sender/xhr-local.ts')
-  , AjaxBasedTransport = require('./lib/ajax-based.ts')
+  , HtmlfileReceiver = require('./receiver/htmlfile')
+  , XHRLocalObject = require('./sender/xhr-local')
+  , AjaxBasedTransport = require('./lib/ajax-based')
   ;
 
 function HtmlFileTransport(transUrl) {
@@ -8124,9 +8124,9 @@ module.exports = IframeTransport;
 //   o for Konqueror a dumb timer is needed to detect errors
 
 var inherits = require('inherits')
-  , SenderReceiver = require('./lib/sender-receiver.ts')
-  , JsonpReceiver = require('./receiver/jsonp.ts')
-  , jsonpSender = require('./sender/jsonp.ts')
+  , SenderReceiver = require('./lib/sender-receiver')
+  , JsonpReceiver = require('./receiver/jsonp')
+  , jsonpSender = require('./sender/jsonp')
   ;
 
 function JsonPTransport(transUrl) {
@@ -8156,7 +8156,7 @@ module.exports = JsonPTransport;
 
 var inherits = require('inherits')
   , urlUtils = require('../../utils/url')
-  , SenderReceiver = require('./sender-receiver.ts')
+  , SenderReceiver = require('./sender-receiver')
   ;
 
 var debug = function() {};
@@ -8402,8 +8402,8 @@ module.exports = Polling;
 
 var inherits = require('inherits')
   , urlUtils = require('../../utils/url')
-  , BufferedSender = require('./buffered-sender.ts')
-  , Polling = require('./polling.ts')
+  , BufferedSender = require('./buffered-sender')
+  , Polling = require('./polling')
   ;
 
 var debug = function() {};
@@ -9151,7 +9151,7 @@ var utils = require('../utils/event')
   , urlUtils = require('../utils/url')
   , inherits = require('inherits')
   , EventEmitter = require('events').EventEmitter
-  , WebsocketDriver = require('./driver/websocket.ts')
+  , WebsocketDriver = require('./driver/websocket')
   ;
 
 var debug = function() {};
@@ -9251,10 +9251,10 @@ module.exports = WebSocketTransport;
 'use strict';
 
 var inherits = require('inherits')
-  , AjaxBasedTransport = require('./lib/ajax-based.ts')
-  , XdrStreamingTransport = require('./xdr-streaming.ts')
-  , XhrReceiver = require('./receiver/xhr.ts')
-  , XDRObject = require('./sender/xdr.ts')
+  , AjaxBasedTransport = require('./lib/ajax-based')
+  , XdrStreamingTransport = require('./xdr-streaming')
+  , XhrReceiver = require('./receiver/xhr')
+  , XDRObject = require('./sender/xdr')
   ;
 
 function XdrPollingTransport(transUrl) {
@@ -9276,9 +9276,9 @@ module.exports = XdrPollingTransport;
 'use strict';
 
 var inherits = require('inherits')
-  , AjaxBasedTransport = require('./lib/ajax-based.ts')
-  , XhrReceiver = require('./receiver/xhr.ts')
-  , XDRObject = require('./sender/xdr.ts')
+  , AjaxBasedTransport = require('./lib/ajax-based')
+  , XhrReceiver = require('./receiver/xhr')
+  , XDRObject = require('./sender/xdr')
   ;
 
 // According to:
@@ -9310,10 +9310,10 @@ module.exports = XdrStreamingTransport;
 'use strict';
 
 var inherits = require('inherits')
-  , AjaxBasedTransport = require('./lib/ajax-based.ts')
-  , XhrReceiver = require('./receiver/xhr.ts')
-  , XHRCorsObject = require('./sender/xhr-cors.ts')
-  , XHRLocalObject = require('./sender/xhr-local.ts')
+  , AjaxBasedTransport = require('./lib/ajax-based')
+  , XhrReceiver = require('./receiver/xhr')
+  , XHRCorsObject = require('./sender/xhr-cors')
+  , XHRLocalObject = require('./sender/xhr-local')
   ;
 
 function XhrPollingTransport(transUrl) {
@@ -9346,10 +9346,10 @@ module.exports = XhrPollingTransport;
 'use strict';
 
 var inherits = require('inherits')
-  , AjaxBasedTransport = require('./lib/ajax-based.ts')
-  , XhrReceiver = require('./receiver/xhr.ts')
-  , XHRCorsObject = require('./sender/xhr-cors.ts')
-  , XHRLocalObject = require('./sender/xhr-local.ts')
+  , AjaxBasedTransport = require('./lib/ajax-based')
+  , XhrReceiver = require('./receiver/xhr')
+  , XHRCorsObject = require('./sender/xhr-cors')
+  , XHRLocalObject = require('./sender/xhr-local')
   , browser = require('../utils/browser')
   ;
 
@@ -9495,7 +9495,7 @@ module.exports = {
 (function (global){(function (){
 'use strict';
 
-var random = require('./random.ts');
+var random = require('./random');
 
 var onUnload = {}
   , afterUnload = false
@@ -9573,8 +9573,8 @@ if (!isChromePackagedApp) {
 (function (process,global){(function (){
 'use strict';
 
-var eventUtils = require('./event.ts')
-  , browser = require('./browser.ts')
+var eventUtils = require('./event')
+  , browser = require('./browser')
   ;
 
 var debug = function() {};
@@ -10372,7 +10372,7 @@ function localstorage() {
 	}
 }
 
-module.exports = require('./common.ts')(exports);
+module.exports = require('./common')(exports);
 
 const {formatters} = module.exports;
 
@@ -15044,7 +15044,7 @@ var $TypeError = __webpack_require__(6);
 * That node is also moved to the head of the list, so that if it's accessed again we don't need to traverse the whole list.
 * By doing so, all the recently used nodes can be accessed relatively quickly.
 */
-/** @type {import('./list.ts').listGetNode} */
+/** @type {import('./list.d.ts').listGetNode} */
 // eslint-disable-next-line consistent-return
 var listGetNode = function (list, key, isDelete) {
 	/** @type {typeof list | NonNullable<(typeof list)['next']>} */
@@ -15065,7 +15065,7 @@ var listGetNode = function (list, key, isDelete) {
 	}
 };
 
-/** @type {import('./list.ts').listGet} */
+/** @type {import('./list.d.ts').listGet} */
 var listGet = function (objects, key) {
 	if (!objects) {
 		return void undefined;
@@ -15073,28 +15073,28 @@ var listGet = function (objects, key) {
 	var node = listGetNode(objects, key);
 	return node && node.value;
 };
-/** @type {import('./list.ts').listSet} */
+/** @type {import('./list.d.ts').listSet} */
 var listSet = function (objects, key, value) {
 	var node = listGetNode(objects, key);
 	if (node) {
 		node.value = value;
 	} else {
 		// Prepend the new node to the beginning of the list
-		objects.next = /** @type {import('./list.ts').ListNode<typeof value, typeof key>} */ ({ // eslint-disable-line no-param-reassign, no-extra-parens
+		objects.next = /** @type {import('./list.d.ts').ListNode<typeof value, typeof key>} */ ({ // eslint-disable-line no-param-reassign, no-extra-parens
 			key: key,
 			next: objects.next,
 			value: value
 		});
 	}
 };
-/** @type {import('./list.ts').listHas} */
+/** @type {import('./list.d.ts').listHas} */
 var listHas = function (objects, key) {
 	if (!objects) {
 		return false;
 	}
 	return !!listGetNode(objects, key);
 };
-/** @type {import('./list.ts').listDelete} */
+/** @type {import('./list.d.ts').listDelete} */
 // eslint-disable-next-line consistent-return
 var listDelete = function (objects, key) {
 	if (objects) {
@@ -15102,13 +15102,13 @@ var listDelete = function (objects, key) {
 	}
 };
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = function getSideChannelList() {
 	/** @typedef {ReturnType<typeof getSideChannelList>} Channel */
 	/** @typedef {Parameters<Channel['get']>[0]} K */
 	/** @typedef {Parameters<Channel['set']>[1]} V */
 
-	/** @type {import('./list.ts').RootNode<V, K> | undefined} */ var $o;
+	/** @type {import('./list.d.ts').RootNode<V, K> | undefined} */ var $o;
 
 	/** @type {Channel} */
 	var channel = {
@@ -15154,7 +15154,7 @@ module.exports = function getSideChannelList() {
 "use strict";
 
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = Error;
 
 
@@ -15165,7 +15165,7 @@ module.exports = Error;
 "use strict";
 
 
-/** @type {import('./eval.ts')} */
+/** @type {import('./eval')} */
 module.exports = EvalError;
 
 
@@ -15176,7 +15176,7 @@ module.exports = EvalError;
 "use strict";
 
 
-/** @type {import('./range.ts')} */
+/** @type {import('./range')} */
 module.exports = RangeError;
 
 
@@ -15187,7 +15187,7 @@ module.exports = RangeError;
 "use strict";
 
 
-/** @type {import('./ref.ts')} */
+/** @type {import('./ref')} */
 module.exports = ReferenceError;
 
 
@@ -15198,7 +15198,7 @@ module.exports = ReferenceError;
 "use strict";
 
 
-/** @type {import('./syntax.ts')} */
+/** @type {import('./syntax')} */
 module.exports = SyntaxError;
 
 
@@ -15209,7 +15209,7 @@ module.exports = SyntaxError;
 "use strict";
 
 
-/** @type {import('./uri.ts')} */
+/** @type {import('./uri')} */
 module.exports = URIError;
 
 
@@ -15220,7 +15220,7 @@ module.exports = URIError;
 "use strict";
 
 
-/** @type {import('./abs.ts')} */
+/** @type {import('./abs')} */
 module.exports = Math.abs;
 
 
@@ -15231,7 +15231,7 @@ module.exports = Math.abs;
 "use strict";
 
 
-/** @type {import('./floor.ts')} */
+/** @type {import('./floor')} */
 module.exports = Math.floor;
 
 
@@ -15242,7 +15242,7 @@ module.exports = Math.floor;
 "use strict";
 
 
-/** @type {import('./max.ts')} */
+/** @type {import('./max')} */
 module.exports = Math.max;
 
 
@@ -15253,7 +15253,7 @@ module.exports = Math.max;
 "use strict";
 
 
-/** @type {import('./min.ts')} */
+/** @type {import('./min')} */
 module.exports = Math.min;
 
 
@@ -15264,7 +15264,7 @@ module.exports = Math.min;
 "use strict";
 
 
-/** @type {import('./pow.ts')} */
+/** @type {import('./pow')} */
 module.exports = Math.pow;
 
 
@@ -15275,7 +15275,7 @@ module.exports = Math.pow;
 "use strict";
 
 
-/** @type {import('./round.ts')} */
+/** @type {import('./round')} */
 module.exports = Math.round;
 
 
@@ -15288,7 +15288,7 @@ module.exports = Math.round;
 
 var $isNaN = __webpack_require__(90);
 
-/** @type {import('./sign.ts')} */
+/** @type {import('./sign')} */
 module.exports = function sign(number) {
 	if ($isNaN(number) || number === 0) {
 		return number;
@@ -15304,7 +15304,7 @@ module.exports = function sign(number) {
 "use strict";
 
 
-/** @type {import('./isNaN.ts')} */
+/** @type {import('./isNaN')} */
 module.exports = Number.isNaN || function isNaN(a) {
 	return a !== a;
 };
@@ -15317,7 +15317,7 @@ module.exports = Number.isNaN || function isNaN(a) {
 "use strict";
 
 
-/** @type {import('./gOPD.ts')} */
+/** @type {import('./gOPD')} */
 module.exports = Object.getOwnPropertyDescriptor;
 
 
@@ -15328,7 +15328,7 @@ module.exports = Object.getOwnPropertyDescriptor;
 "use strict";
 
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 var $defineProperty = Object.defineProperty || false;
 if ($defineProperty) {
 	try {
@@ -15352,7 +15352,7 @@ module.exports = $defineProperty;
 var origSymbol = typeof Symbol !== 'undefined' && Symbol;
 var hasSymbolSham = __webpack_require__(94);
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = function hasNativeSymbols() {
 	if (typeof origSymbol !== 'function') { return false; }
 	if (typeof Symbol !== 'function') { return false; }
@@ -15370,7 +15370,7 @@ module.exports = function hasNativeSymbols() {
 "use strict";
 
 
-/** @type {import('./shams.ts')} */
+/** @type {import('./shams')} */
 /* eslint complexity: [2, 18], max-statements: [2, 33] */
 module.exports = function hasSymbols() {
 	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
@@ -15427,7 +15427,7 @@ var originalGetProto = __webpack_require__(36);
 
 var getDunderProto = __webpack_require__(96);
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = reflectGetProto
 	? function getProto(O) {
 		// @ts-expect-error TS can't narrow inside a closure, for some reason
@@ -15475,11 +15475,11 @@ var desc = !!hasProtoAccessor && gOPD && gOPD(Object.prototype, /** @type {keyof
 var $Object = Object;
 var $getPrototypeOf = $Object.getPrototypeOf;
 
-/** @type {import('./get.ts')} */
+/** @type {import('./get')} */
 module.exports = desc && typeof desc.get === 'function'
 	? callBind([desc.get])
 	: typeof $getPrototypeOf === 'function'
-		? /** @type {import('./get.ts')} */ function getDunder(value) {
+		? /** @type {import('./get')} */ function getDunder(value) {
 			// eslint-disable-next-line eqeqeq
 			return $getPrototypeOf(value == null ? value : $Object(value));
 		}
@@ -15590,7 +15590,7 @@ var $apply = __webpack_require__(38);
 var $call = __webpack_require__(18);
 var $reflectApply = __webpack_require__(99);
 
-/** @type {import('./actualApply.ts')} */
+/** @type {import('./actualApply')} */
 module.exports = $reflectApply || bind.call($call, $apply);
 
 
@@ -15601,7 +15601,7 @@ module.exports = $reflectApply || bind.call($call, $apply);
 "use strict";
 
 
-/** @type {import('./reflectApply.ts')} */
+/** @type {import('./reflectApply')} */
 module.exports = typeof Reflect !== 'undefined' && Reflect && Reflect.apply;
 
 
@@ -15616,7 +15616,7 @@ var call = Function.prototype.call;
 var $hasOwn = Object.prototype.hasOwnProperty;
 var bind = __webpack_require__(13);
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = bind.call(call, $hasOwn);
 
 
@@ -15644,9 +15644,9 @@ var $weakMapHas = callBound('WeakMap.prototype.has', true);
 /** @type {<K extends object, V>(thisArg: WeakMap<K, V>, key: K) => boolean} */
 var $weakMapDelete = callBound('WeakMap.prototype.delete', true);
 
-/** @type {import('./index.ts')} */
+/** @type {import('.')} */
 module.exports = $WeakMap
-	? /** @type {Exclude<import('./index.ts'), false>} */ function getSideChannelWeakMap() {
+	? /** @type {Exclude<import('.'), false>} */ function getSideChannelWeakMap() {
 		/** @typedef {ReturnType<typeof getSideChannelWeakMap>} Channel */
 		/** @typedef {Parameters<Channel['get']>[0]} K */
 		/** @typedef {Parameters<Channel['set']>[1]} V */
